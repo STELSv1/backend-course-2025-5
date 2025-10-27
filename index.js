@@ -8,7 +8,7 @@ const superagent = require("superagent");
 
 const program = new Command();
 program
-  .requiredOption("-H, --host <host>", "Host of the server")
+  .requiredOption("-H, --host <host>", "Host of the server") // <-- Використовуємо -H
   .requiredOption("-p, --port <port>", "Port of the server")
   .requiredOption("-c, --cache <path>", "Path to cache directory");
 program.parse(process.argv);
