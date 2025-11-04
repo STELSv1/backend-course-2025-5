@@ -1,0 +1,23 @@
+GET
+curl -v http://127.0.0.1:3000/200 -o 200.jpg
+
+CACHE
+curl -v http://127.0.0.1:3000/200 -o 200_cached.jpg
+
+PUT
+curl -v -X PUT --data-binary @test.jpg http://127.0.0.1:3000/201
+
+CHECK
+curl -v http://127.0.0.1:3000/201 -o 201_from_cache.jpg
+
+DELETE
+curl -v -X DELETE http://127.0.0.1:3000/201
+
+VERIFY
+curl -v http://127.0.0.1:3000/201
+
+PATCH
+curl -v -X PATCH http://127.0.0.1:3000/200
+
+NOTFOUND
+curl -v http://127.0.0.1:3000/999999 -o 999999.jpg
